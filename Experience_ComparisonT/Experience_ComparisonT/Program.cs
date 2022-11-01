@@ -12,17 +12,13 @@ namespace Experience_ComparisonT
             list.Add(new Product("Notebook", 1200.00));
             list.Add(new Product("Tablet", 450.00));
 
-            list.Sort(CompareProducts);
+            list.Sort((p1, p2) => p1.Name.ToUpper().CompareTo(p2.Name.ToUpper()));
+            // (p1, p2) => p1.Name.ToUpper().CompareTo(p2.Name.ToUpper()) Expressão Lambda
 
             foreach (Product product in list)
             {
                 Console.WriteLine(product);
             }
-        }
-
-        static int CompareProducts(Product p1, Product p2)
-        {
-            return p1.Name.ToUpper().CompareTo(p2.Name.ToUpper());
         }
     }
 }
